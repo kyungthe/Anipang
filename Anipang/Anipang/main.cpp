@@ -77,6 +77,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		delay = interval - (GetTickCount() - startTick);
 		if (delay < 0) {
+			gameManager->searchCombo();
 			gameManager->renewalWindow(hWnd);
 			startTick = GetTickCount();
 		}

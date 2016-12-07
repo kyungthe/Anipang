@@ -9,6 +9,8 @@ public:
 	void setXY(int x, int y);
 	int getX();
 	int getY();
+	int getWidth();
+	int getHeight();
 
 protected:
 	int m_width;

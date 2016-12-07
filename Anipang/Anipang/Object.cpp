@@ -25,3 +25,11 @@ int Object::getX() {
 int Object::getY() {
 	return m_y;
 }
+
+int Object::getWidth() {
+	return m_width;
+}
+
+int Object::getHeight() {
+	return m_height;
+}

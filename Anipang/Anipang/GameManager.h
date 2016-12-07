@@ -16,12 +16,11 @@ public:
 	void loadBitmap();
 	void drawCharacter(HDC hdc);
 	void drawBackground(HDC hdc);
-	Character* getCharacter(int x, int y);
 	void mouseDown(int x, int y);
 	void mouseMove(int x, int y);
 	void mouseUp();
-	void swap();
 	void renewalWindow(HWND hWnd);
+	bool searchCombo();
 
 private:
 	Bitmap m_background;
@@ -30,6 +29,10 @@ private:
 	Character* m_clicked;
 	Character* m_swap;
 	int swapCount;
+
+	Character* getCharacter(int x, int y);
+	void swap();
+	bool isCombo(Character* character);
 };
 
 #endif // !_GAMEMANAGER_H

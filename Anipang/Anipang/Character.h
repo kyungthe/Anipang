@@ -16,12 +16,15 @@ public:
 	void setType(TYPE type);
 	TYPE getType();
 	void move(int x, int y);
+	void setCombo(bool isCombo);
+	bool getCombo();
 
 private:
 	Bitmap m_bitmap;
 	TYPE m_type;
 	int m_moveX;
 	int m_moveY;
+	bool m_combo;
 };
 
 #endif // !_CHARACTER_H_

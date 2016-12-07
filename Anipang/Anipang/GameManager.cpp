@@ -111,3 +111,62 @@ void GameManager::renewalWindow(HWND hWnd) {
 	rect.bottom = m_background.getHeight();
 	InvalidateRect(hWnd, &rect, true);
 }
+
+bool GameManager::isCombo(Character* character) {
+	int x = character->getX() / character->getWidth();
+	int y = (character->getY() - 138) / character->getHeight();
+	int count = 0;
+
+	for (int i = x; i >= 0; --i) {
+		if (m_characters[y][i]->getType() == character->getType())
+			++count;
+		else
+			break;
+	}
+	for (int i = x; i < 7; ++i) {
+		if (m_characters[y][i]->getType() == character->getType())
+			++count;
+		else
+			break;
+	}
+	--count;
+
+	if (count >= 3) {
+		character->setCombo(true);
+		return true;
+	}
+	count = 0;
+
+	for (int i = y; i >= 0; --i) {
+		if (m_characters[i][x]->getType() == character->getType())
+			++count;
+		else
+			break;
+	}
+	for (int i = y; i < 7; ++i) {
+		if (m_characters[i][x]->getType() == character->getType())
+			++count;
+		else
+			break;
+	}
+	--count;
+
+	if (count >= 3) {
+		character->setCombo(true);
+		return true;
+	}
+	else return false;
+}
+
+bool GameManager::searchCombo() {
+	bool findCombo = false;
+
+	for (int i = 0; i < 7; ++i) {
+		for (int j = 0; j < 7; ++j) {
+			if (isCombo(m_characters[i][j]))
+				findCombo = true;
+		}
+	}
+
+	return findCombo;
+}
