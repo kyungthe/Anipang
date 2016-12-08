@@ -21,6 +21,7 @@ public:
 	void mouseUp();
 	void renewalWindow(HWND hWnd);
 	bool searchCombo();
+	void combo();
 
 private:
 	Bitmap m_background;
@@ -28,7 +29,7 @@ private:
 	HINSTANCE m_instanceHandle;
 	Character* m_clicked;
 	Character* m_swap;
-	int swapCount;
+	int m_swapCount;
 
 	Character* getCharacter(int x, int y);
 	void swap();

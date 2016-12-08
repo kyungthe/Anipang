@@ -1,7 +1,8 @@
 #include "Character.h"
 
 Character::Character() : m_bitmap() {
-	m_width = m_height = m_x = m_y = m_moveX = m_moveY = 0;
+	m_width = m_height = 52;
+	m_x = m_y = m_moveX = m_moveY = 0;
 	m_combo = false;
 }
 
@@ -21,8 +22,6 @@ Character::Character(const Character& c) {
 
 void Character::loadBitmap(HINSTANCE instanceHandle, int id, int maskId) {
 	m_bitmap.load(instanceHandle, id, maskId);
-	m_width = m_bitmap.getWidth();
-	m_height = m_bitmap.getHeight();
 }
 
 void Character::draw(HDC hdc) {

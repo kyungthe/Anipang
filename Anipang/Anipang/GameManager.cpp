@@ -16,9 +16,18 @@ GameManager::GameManager() {
 		}
 	}
 
+	for (int i = 0; i < 7; ++i) {
+		for (int j = 0; j < 7; ++j) {
+			while (isCombo(m_characters[i][j])) {
+				type = static_cast<Character::TYPE>((m_characters[i][j]->getType() + 1) % 7);
+				m_characters[i][j]->setType(type);
+			}
+		}
+	}
+
 	m_clicked = nullptr;
 	m_swap = nullptr;
-	swapCount = 0;
+	m_swapCount = 0;
 }
 
 GameManager::~GameManager() {
@@ -44,7 +53,7 @@ void GameManager::loadBitmap() {
 }
 
 void GameManager::drawCharacter(HDC hdc) {
-	if (swapCount > 0) swapCount -= 4;
+	if (m_swapCount > 0) m_swapCount -= 4;
 
 	for (int i = 0; i < 7; ++i) {
 		for (int j = 0; j < 7; ++j) {
@@ -76,7 +85,7 @@ void GameManager::mouseDown(int x, int y) {
 void GameManager::mouseMove(int x, int y) {
 	if (m_clicked != nullptr) {
 		m_swap = getCharacter(x, y);
-		if ((swapCount == 0) && (m_clicked != m_swap)) {
+		if ((m_swapCount == 0) && (m_clicked != m_swap)) {
 			swap();
 		}
 	}
@@ -94,7 +103,7 @@ void GameManager::swap() {
 	int swapY = m_swap->getY();
 	Character* temp = m_characters[(clickedY - 138) / 52][clickedX / 52];
 
-	swapCount = 52;
+	m_swapCount = 52;
 
 	m_clicked->move(swapX, swapY);
 	m_swap->move(clickedX, clickedY);
@@ -131,10 +140,8 @@ bool GameManager::isCombo(Character* character) {
 	}
 	--count;
 
-	if (count >= 3) {
-		character->setCombo(true);
+	if (count >= 3) 
 		return true;
-	}
 	count = 0;
 
 	for (int i = y; i >= 0; --i) {
@@ -151,11 +158,10 @@ bool GameManager::isCombo(Character* character) {
 	}
 	--count;
 
-	if (count >= 3) {
-		character->setCombo(true);
+	if (count >= 3) 
 		return true;
-	}
-	else return false;
+	else
+		return false;
 }
 
 bool GameManager::searchCombo() {
@@ -163,10 +169,26 @@ bool GameManager::searchCombo() {
 
 	for (int i = 0; i < 7; ++i) {
 		for (int j = 0; j < 7; ++j) {
-			if (isCombo(m_characters[i][j]))
+			if (isCombo(m_characters[i][j]) && m_swapCount == 0) {
+				m_characters[i][j]->setCombo(true);
 				findCombo = true;
+			}
 		}
 	}
 
 	return findCombo;
+}
+
+void GameManager::combo() {
+	int type;
+
+	for (int i = 0; i < 7; ++i) {
+		for (int j = 0; j < 7; ++j) {
+			if (m_characters[i][j]->getCombo()) {
+				type = static_cast<int>(m_characters[i][j]->getType());
+				m_characters[i][j]->loadBitmap(
+					m_instanceHandle, RESOURCE_SELECT_CHARACTER_0 + type, RESOURCE_SELECT_CHARACTER_0_MASK + type);
+			}
+		}
+	}
 }

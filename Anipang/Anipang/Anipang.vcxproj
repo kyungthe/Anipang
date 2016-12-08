@@ -164,18 +164,32 @@
   <ItemGroup>
     <Image Include="..\Resource\0.bmp" />
     <Image Include="..\Resource\0_mask.bmp" />
+    <Image Include="..\Resource\0_select.bmp" />
+    <Image Include="..\Resource\0_smile_mask.bmp" />
     <Image Include="..\Resource\1.bmp" />
     <Image Include="..\Resource\1_mask.bmp" />
+    <Image Include="..\Resource\1_select.bmp" />
+    <Image Include="..\Resource\1_select_mask.bmp" />
     <Image Include="..\Resource\2.bmp" />
     <Image Include="..\Resource\2_mask.bmp" />
+    <Image Include="..\Resource\2_select.bmp" />
+    <Image Include="..\Resource\2_select_mask.bmp" />
     <Image Include="..\Resource\3.bmp" />
     <Image Include="..\Resource\3_mask.bmp" />
+    <Image Include="..\Resource\3_select.bmp" />
+    <Image Include="..\Resource\3_select_mask.bmp" />
     <Image Include="..\Resource\4.bmp" />
     <Image Include="..\Resource\4_mask.bmp" />
+    <Image Include="..\Resource\4_select.bmp" />
+    <Image Include="..\Resource\4_select_mask.bmp" />
     <Image Include="..\Resource\5.bmp" />
     <Image Include="..\Resource\5_mask.bmp" />
+    <Image Include="..\Resource\5_select.bmp" />
+    <Image Include="..\Resource\5_select_mask.bmp" />
     <Image Include="..\Resource\6.bmp" />
     <Image Include="..\Resource\6_mask.bmp" />
+    <Image Include="..\Resource\6_select.bmp" />
+    <Image Include="..\Resource\6_select_mask.bmp" />
     <Image Include="..\Resource\BackGround.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

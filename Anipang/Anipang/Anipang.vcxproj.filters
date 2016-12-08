@@ -108,5 +108,47 @@
     <Image Include="..\Resource\6_mask.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\Resource\0_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\1_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\2_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\3_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\4_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\5_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\6_select.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\0_smile_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\1_select_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\2_select_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\3_select_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\4_select_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\5_select_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\Resource\6_select_mask.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>
